@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/absoluteLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <!--android:background="@drawable/fond_metallique"-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/barreBoutons"
+            android:layout_width="150sp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:src="@drawable/texture_noir" />
+
+        <ImageView
+            android:layout_width="10sp"
+            android:layout_height="20sp"
+            android:id="@+id/curseurMenu"
+            android:src="@drawable/curseur_menu" />
+
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="match_parent"
+            android:id="@+id/barreMenu"
+            android:layout_below="@+id/button"
+            android:layout_alignEnd="@+id/dragTest"
+            android:src="@drawable/barre_menu" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/commandeBras"
+        android:layout_width="100sp"
+        android:layout_height="150sp"
+        android:layout_x="25sp"
+        android:layout_y="20dp"
+        android:background="@drawable/demi_tour"
+        android:onClick="commandeBrasClick"
+        android:nestedScrollingEnabled="true" />
+
+    <ImageButton
+        android:id="@+id/commandeRoues"
+        android:layout_width="100sp"
+        android:layout_height="150sp"
+        android:layout_x="25sp"
+        android:layout_y="200sp"
+        android:background="@drawable/demi_tour"
+        android:onClick="commandeRouesClick" />
+
+    <ImageButton
+        android:id="@+id/commandCapteurs"
+        android:layout_width="100sp"
+        android:layout_height="150sp"
+        android:layout_x="26sp"
+        android:layout_y="380sp"
+        android:background="@drawable/haut"
+        android:onClick="commandeCapteursClick" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_drag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.pauljulian.zumo_programmation.DynamicListView
+            android:id="@+id/listview"
+            android:layout_width="150sp"
+            android:layout_height="500sp"
+            android:layout_x="441dp"
+            android:layout_y="42dp"
+            android:background="#0000"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/button" />
+
+        <ImageView
+            android:id="@+id/dragTest"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginEnd="41dp"
+            android:layout_x="42dp"
+            android:layout_y="123dp"
+            android:background="@drawable/tourner_droite"
+            android:layout_alignTop="@+id/listview"
+            android:layout_alignEnd="@+id/listview"
+            android:layout_marginTop="72dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:id="@+id/button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="86dp"
+            android:onClick="commencerTour" />
+
+        <ListView
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/elementaryActionListView"
+            android:layout_marginLeft="250dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/listview" />
+
+    </RelativeLayout>
+
+</AbsoluteLayout>
